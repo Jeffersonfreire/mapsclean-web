@@ -13,7 +13,7 @@ export const firebaseConfig = {
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID || '1:396222420037:android:1a7c92bffaf43b5bb73f2c',
 };
 
-let app = getApps().length ? getApp() : initializeApp(firebaseConfig);
+const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 // Web: usar browserLocalPersistence para manter sessão e permitir popups
 if (typeof window !== 'undefined') {

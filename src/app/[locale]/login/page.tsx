@@ -22,8 +22,8 @@ export default function LoginPage() {
         await createUserWithEmailAndPassword(auth, email, password);
       }
       window.location.href = '../account';
-    } catch (err: any) {
-      setError(err?.message || 'Erreur de connexion');
+    } catch (err: unknown) {
+      setError((err as Error)?.message || 'Erreur de connexion');
     } finally {
       setLoading(false);
     }
@@ -36,8 +36,8 @@ export default function LoginPage() {
       const provider = new GoogleAuthProvider();
       await signInWithPopup(auth, provider);
       window.location.href = '../account';
-    } catch (err: any) {
-      setError(err?.message || 'Erreur de connexion Google');
+    } catch (err: unknown) {
+      setError((err as Error)?.message || 'Erreur de connexion Google');
     } finally {
       setLoading(false);
     }
@@ -50,8 +50,8 @@ export default function LoginPage() {
       const provider = new OAuthProvider('apple.com');
       await signInWithPopup(auth, provider);
       window.location.href = '../account';
-    } catch (err: any) {
-      setError(err?.message || 'Erreur de connexion Apple');
+    } catch (err: unknown) {
+      setError((err as Error)?.message || 'Erreur de connexion Apple');
     } finally {
       setLoading(false);
     }
