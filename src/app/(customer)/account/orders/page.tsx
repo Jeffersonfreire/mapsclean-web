@@ -5,7 +5,7 @@ import { onAuthStateChanged } from 'firebase/auth';
 import { collection, query, where, orderBy, getDocs } from 'firebase/firestore';
 import Link from 'next/link';
 
-type Order = { id: string; amount: number; status: string; created?: any };
+type Order = { id: string; amount: number; status: string; created?: unknown };
 
 export default function OrdersPage() {
   const [orders, setOrders] = useState<Order[]>([]);
@@ -25,7 +25,7 @@ export default function OrdersPage() {
           orderBy('created', 'desc')
         );
         const snap = await getDocs(q);
-        const list: Order[] = snap.docs.map((d) => ({ id: d.id, ...(d.data() as any) }));
+        const list: Order[] = snap.docs.map((d) => ({ id: d.id, ...(d.data() as Record<string, unknown>) }));
         setOrders(list);
       } catch (e) {
         console.warn(e);

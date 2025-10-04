@@ -11,7 +11,7 @@ export default function OrderSuccessPage() {
       <p>Merci pour votre confiance. Montant: €{amount}</p>
       <div className="space-x-4">
         <Link className="underline" href="/account">Voir mon compte</Link>
-        <Link className="underline" href="/">Retour à l'accueil</Link>
+        <Link className="underline" href="/">Retour à l&apos;accueil</Link>
       </div>
     </div>
   );

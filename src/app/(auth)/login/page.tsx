@@ -24,8 +24,8 @@ export default function LoginPage() {
         await createUserWithEmailAndPassword(auth, email, password);
       }
       window.location.href = '/account';
-    } catch (err: any) {
-      setError(err?.message || 'Erreur');
+    } catch (err: unknown) {
+      setError((err as Error)?.message || 'Erreur');
     } finally {
       setLoading(false);
     }
