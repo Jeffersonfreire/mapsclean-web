@@ -1,0 +1,20 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "pricing": "Pricing",
+    "login": "Sign in",
+    "account": "My account"
+  },
+  "hero": {
+    "title": "Professional, fast and reliable cleaning",
+    "subtitle": "Book in minutes, secure payment Bancontact/Card."
+  },
+  "auth": {
+    "email": "Email",
+    "password": "Password",
+    "signin": "Sign in",
+    "signup": "Create account"
+  }
+}
+

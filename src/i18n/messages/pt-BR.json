@@ -1,0 +1,20 @@
+{
+  "nav": {
+    "home": "Início",
+    "services": "Serviços",
+    "pricing": "Preços",
+    "login": "Entrar",
+    "account": "Minha conta"
+  },
+  "hero": {
+    "title": "Limpezas profissionais, rápidas e confiáveis",
+    "subtitle": "Reserve em minutos, pagamento seguro Bancontact/Cartão."
+  },
+  "auth": {
+    "email": "E-mail",
+    "password": "Senha",
+    "signin": "Entrar",
+    "signup": "Criar conta"
+  }
+}
+
