@@ -9,7 +9,7 @@ export default async function LocaleLayout({
   children: ReactNode;
   params: Promise<{ locale: string }>;
 }) {
-  const { locale } = await params;
+  await params; // locale não usado por enquanto
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
