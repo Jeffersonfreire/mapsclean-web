@@ -1,10 +1,4 @@
 {
-  "redirects": [
-    {"source": "/", "destination": "/fr-BE", "permanent": true}
-  ],
-  "rewrites": [
-    {"source": "/((?!fr-BE|pt-BR|en|_next|assets|favicon.ico).*)", "destination": "/fr-BE/$1"}
-  ],
   "headers": [
     {"source": "/(.*)", "headers": [
       {"key": "X-Frame-Options", "value": "SAMEORIGIN"},
