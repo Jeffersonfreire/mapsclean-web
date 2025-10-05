@@ -25,7 +25,15 @@ export default function OrdersPage() {
           orderBy('created', 'desc')
         );
         const snap = await getDocs(q);
-        const list: Order[] = snap.docs.map((d) => ({ id: d.id, ...(d.data() as Record<string, unknown>) }));
+        const list: Order[] = snap.docs.map((d) => {
+          const data = d.data();
+          return {
+            id: d.id,
+            amount: (data.amount as number) || 0,
+            status: (data.status as string) || 'pending',
+            created: data.created
+          };
+        });
         setOrders(list);
       } catch (e) {
         console.warn(e);
