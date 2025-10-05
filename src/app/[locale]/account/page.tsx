@@ -5,9 +5,15 @@ import { onAuthStateChanged, signOut } from 'firebase/auth';
 import Link from 'next/link';
 
 export default function AccountPage() {
-  const [user, setUser] = useState<{ email: string } | null>(null);
+  const [user, setUser] = useState<{ email: string | null } | null>(null);
   useEffect(() => {
-    const unsub = onAuthStateChanged(auth, setUser);
+    const unsub = onAuthStateChanged(auth, (firebaseUser) => {
+      if (firebaseUser) {
+        setUser({ email: firebaseUser.email });
+      } else {
+        setUser(null);
+      }
+    });
     return () => unsub();
   }, []);
 
