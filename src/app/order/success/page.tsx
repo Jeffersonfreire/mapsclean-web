@@ -1,8 +1,9 @@
 "use client";
+import { Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 
-export default function OrderSuccessPage() {
+function OrderSuccessContent() {
   const params = useSearchParams();
   const amount = params.get('amount');
   return (
@@ -14,6 +15,14 @@ export default function OrderSuccessPage() {
         <Link className="underline" href="/">Retour à l&apos;accueil</Link>
       </div>
     </div>
+  );
+}
+
+export default function OrderSuccessPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen p-8 text-center">Chargement...</div>}>
+      <OrderSuccessContent />
+    </Suspense>
   );
 }
 
